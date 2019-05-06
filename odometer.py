@@ -28,7 +28,6 @@ def next(num,l1):
 for x in range(convert(start),convert(limit)+1):
     if list(str(x)) == sorted(str(x)) and x % 11 != 0 and check(str(x)):
         l1.append(x)
-print()
 print(previous(num,l1))
 print(next(num,l1))
 
