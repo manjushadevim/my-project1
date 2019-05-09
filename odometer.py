@@ -1,9 +1,15 @@
 size,num,l1 = int(input()),int(input()),[]
 l = '123456789'
 
+<<<<<<< HEAD
 start,limit = int(l[:size]),int(l[-size:])
 
 def isAscending(num):
+=======
+start,limit = l[:size],l[-size:]
+
+def is_Ascending(num):
+>>>>>>> 90fde491da73990d96622ae37d11c576a0ce5c16
     if len(set(list(num))) == len(num):
         return 1
     return 0
@@ -14,18 +20,32 @@ def previous(num,l1):
  
 def next(num,l1):
     if num == l1[-1]: return l1[0]
+<<<<<<< HEAD
     if int(num) in l1: 
         a = l1.index(int(num))
         return l1[a+1]
 
 def previous_nth(num,l1,n):
+=======
+    if int(num) in l1:
+        a = l1.index(int(num))
+        return l1[a+1]
+
+ def previous _nth(num,l1,n):
+>>>>>>> 90fde491da73990d96622ae37d11c576a0ce5c16
     for i in range(n):
         a = l1.index(int(num))
         p = previous(num,l1)
         num = l1[a-1]
+<<<<<<< HEAD
     return num
 
 def next_nth(num,l1,m):
+=======
+     return num
+
+ def next_nth(num,l1,m):
+>>>>>>> 90fde491da73990d96622ae37d11c576a0ce5c16
     for i in range(m):
         a = l1.index(int(num))
         next_nth = next(num,l1)
@@ -37,6 +57,7 @@ def difference(num1,num2,l1):
     else:
         count = 0
         while num1 != num2:
+<<<<<<< HEAD
             count, a = count + 1,l1.index(num1)
             if num1 == l1[-1]: num1 = l1[0]
             else: num1 = l1[a+1]
@@ -60,3 +81,27 @@ else:
 
     num1,num2 = int(input()),int(input())
     print("Difference = ",difference(num1,num2,l1))
+=======
+            count,a = count + 1,l1.index(num1)
+            if num1 == l1[-1]: num1 = l1[0]
+            else: num1 = l1[a+1]
+        return count
+    
+for x in range(start,limit+1):
+    if list(str(x)) == sorted(str(x)) and x % 11 != 0 and isAscending(str(x)):
+        l1.append(x)
+        
+if num not in l1:
+    print('Invalid')
+else:
+    print(previous(num,l1)), print(next(num,l1))
+
+    n = int(input())
+    print('Previous_nth number = ', previous_nth(num,l1,n))
+    
+    m = int(input())
+    print('Next_nth number = ', next_nth(num,l1,m))
+   
+    num1,num2 = int(input()),int(input())
+    print('Difference = ', difference(num1,num2,l1))
+>>>>>>> 90fde491da73990d96622ae37d11c576a0ce5c16
